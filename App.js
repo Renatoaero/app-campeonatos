@@ -1,21 +1,52 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import Index from "./src/components";
+const { Chaves, Campeonato, Fases } = Index;
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Campeonato'>
+        <Stack.Screen
+          name="Campeonato"
+          component={Campeonato}
+          options={{
+            title: "Home",
+            headerTitleAlign: "center",
+            headerStyle: {
+              backgroundColor: '#fff',
+            },
+            headerTintColor: '#006400',
+          }}
+        />
+         <Stack.Screen
+          name="Fases"
+          component={Fases}
+          options={{
+            title: "Fases do Campeonato",
+            headerTitleAlign: "left",
+            headerStyle: {
+              backgroundColor: '#fff',
+            },
+            headerTintColor: '#006400',
+          }}
+        />
+        <Stack.Screen
+          name="Chaves"
+          component={Chaves}
+          options={{
+            title: "Chaveamento",
+            headerTitleAlign: "left",
+            headerStyle: {
+              backgroundColor: '#fff',
+            },
+            headerTintColor: '#006400',
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
