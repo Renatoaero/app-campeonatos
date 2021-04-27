@@ -1,6 +1,6 @@
 import axios from "axios";
-const prodToken = 'live_ec011b9e3f4a03d66e449bf85c0e8a';
-const devToken = 'test_2030a0fb67f1101f1055d1b5ffe919';
+const prodToken = 'live_2debccb41fb710acee7d3945d0708f';
+const devToken = 'test_f0653b77e6d1faf1c088ad28ef5146';
 const headers = { 'Authorization': `Bearer ${prodToken}`};;
 const urlBase = 'https://api.api-futebol.com.br'
 
